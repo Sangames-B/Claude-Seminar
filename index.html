@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claude AI & MCP - Seminar Presentation</title>
+    <!-- Google Fonts: Outfit & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome CDN for modern vector icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation (Desktop) -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo-group">
+                    <i class="fa-solid fa-brain logo-icon"></i>
+                    <span class="logo-text">Claude Seminar</span>
+                </div>
+                <button class="sidebar-toggle-btn" id="sidebarToggleBtn" title="Collapse Sidebar">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="nav-item active" data-slide="0"><span class="nav-num">01</span> <span class="nav-text">Introduction</span></li>
+                    <li class="nav-item" data-slide="1"><span class="nav-num">02</span> <span class="nav-text">Who is Behind It?</span></li>
+                    <li class="nav-item" data-slide="2"><span class="nav-num">03</span> <span class="nav-text">Core Interface</span></li>
+                    <li class="nav-item" data-slide="3"><span class="nav-num">04</span> <span class="nav-text">How to Access</span></li>
+                    <li class="nav-item" data-slide="4"><span class="nav-num">05</span> <span class="nav-text">Free vs. Pro</span></li>
+                    <li class="nav-item" data-slide="5"><span class="nav-num">06</span> <span class="nav-text">MCP &amp; Connectors</span></li>
+                    <li class="nav-item" data-slide="6"><span class="nav-num">07</span> <span class="nav-text">Software Development</span></li>
+                    <li class="nav-item" data-slide="7"><span class="nav-num">08</span> <span class="nav-text">Creative Design</span></li>
+                    <li class="nav-item" data-slide="8"><span class="nav-num">09</span> <span class="nav-text">Automation &amp; Data</span></li>
+                    <li class="nav-item" data-slide="9"><span class="nav-num">10</span> <span class="nav-text">Connector Governance</span></li>
+                    <li class="nav-item" data-slide="10"><span class="nav-num">11</span> <span class="nav-text">Limits &amp; Workarounds</span></li>
+                    <li class="nav-item" data-slide="11"><span class="nav-num">12</span> <span class="nav-text">Conclusion</span></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Slide Presentation Area -->
+        <main class="presentation-area">
+            <!-- Progress Bar -->
+            <div class="progress-bar-container">
+                <div class="progress-bar" id="progressBar"></div>
+            </div>
+
+            <!-- Slide Containers -->
+            <div class="slides-container" id="slidesContainer">
+
+                <!-- SLIDE 1: TITLE SLIDE -->
+                <section class="slide active" id="slide-0">
+                    <div class="slide-grid title-slide-layout">
+                        <div class="slide-content-left">
+                            <span class="badge">TECHNICAL SEMINAR</span>
+                            <h1 class="main-title">Understanding Claude, MCP &amp; Ecosystem Capabilities</h1>
+                            <p class="subtitle">An in-depth look at Anthropic's state-of-the-art AI assistant, the Model Context Protocol, and real-world system integrations.</p>
+                            <div class="presenter-intro">
+                                <span class="presented-by">Presented by</span>
+                                <strong class="presenter-name">SANGAMESWARAN</strong>
+                            </div>
+                        </div>
+                        <div class="slide-visual">
+                            <img src="assets/ai_cover.jpg" alt="Artificial Intelligence Abstract" class="featured-img glow-effect">
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SLIDE 2: WHO IS BEHIND IT -->
+                <section class="slide" id="slide-1">
+                    <div class="slide-grid">
+                        <div class="slide-content-left">
+                            <span class="slide-number">02</span>
+                            <h2>Who is Behind It?</h2>
+                            <h3 class="section-subtitle">The "Anthropic" Factor</h3>
+                            
+                            <div class="content-block">
+                                <div class="info-card">
+                                    <i class="fa-solid fa-shield-halved card-icon"></i>
+                                    <div>
+                                        <h4>AI Safety &amp; Research Foundations</h4>
+                                        <p>Anthropic was founded by ex-OpenAI research leaders who left with a core mission: to build "safe, steerable, and reliable" AI systems.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="info-card highlight">
+                                    <i class="fa-solid fa-briefcase card-icon"></i>
+                                    <div>
+                                        <h4>The Business Trust Hook</h4>
+                                        <p>Built from the ground up to be highly reliable, less prone to random behavior, and excellent at adhering to corporate compliance and precise guidelines.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slide-visual">
+                            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80" alt="Tech and Coding" class="featured-img">
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SLIDE 3: CORE INTERFACE -->
+                <section class="slide" id="slide-2">
+                    <div class="slide-grid">
+                        <div class="slide-content-left">
+                            <span class="slide-number">03</span>
+                            <h2>Core Interface &amp; Interaction</h2>
+                            <h3 class="section-subtitle">Text, Files, and Visuals</h3>
+                            
+                            <div class="bullets-container">
+                                <div class="bullet-item">
+                                    <div class="bullet-bullet"><i class="fa-solid fa-message"></i></div>
+                                    <div class="bullet-text">
+                                        <strong>Advanced Conversational Model:</strong> Optimized for logical dialogue, detailed coding tasks, complex math, and writing with fine-tuned tone control.
+                                    </div>
+                                </div>
+                                <div class="bullet-item">
+                                    <div class="bullet-bullet"><i class="fa-solid fa-file-pdf"></i></div>
+                                    <div class="bullet-text">
+                                        <strong>Multimodal Input Analysis:</strong> Natively reads and processes images, PDFs, spreadsheets, and documents uploaded directly into the chat.
+                                    </div>
+                                </div>
+                                <div class="bullet-item">
+                                    <div class="bullet-bullet"><i class="fa-solid fa-bolt"></i></div>
+                                    <div class="bullet-text">
+                                        <strong>Exceptional Comprehension:</strong> Scans massive business reports, financial statements, and technical documents in seconds.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slide-visual">
+                            <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=800&q=80" alt="Devices showing interface" class="featured-img">
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SLIDE 4: HOW TO ACCESS IT -->
+                <section class="slide" id="slide-3">
+                    <div class="slide-grid">
+                        <div class="slide-content-left">
+                            <span class="slide-number">04</span>
+                            <h2>How to Access It</h2>
+                            <h3 class="section-subtitle">Platforms &amp; Ecosystem</h3>
+                            
+                            <div class="grid-cards">
+                                <div class="access-card">
+                                    <i class="fa-solid fa-globe"></i>
+                                    <h4>Web Portal</h4>
+                                    <p>Access conversational browser features at <strong>claude.ai</strong>.</p>
+                                </div>
+                                <div class="access-card">
+                                    <i class="fa-solid fa-mobile-screen"></i>
+                                    <h4>Mobile Apps</h4>
+                                    <p>Official iOS &amp; Android apps for drafting ideas on the go.</p>
+                                </div>
+                                <div class="access-card full-width">
+                                    <i class="fa-solid fa-network-wired"></i>
+                                    <div>
+                                        <h4>Enterprise &amp; Developers</h4>
+                                        <p>Access through the Claude API and deep workspace integrations in Slack, Google Docs, and IDEs.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slide-visual">
+                            <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80" alt="Networking connections" class="featured-img">
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SLIDE 5: FREE VS PRO -->
+                <section class="slide" id="slide-4">
+                    <div class="slide-grid">
+                        <div class="slide-content-left">
+                            <span class="slide-number">05</span>
+                            <h2>Free Tier vs. Pro Account</h2>
+                            <h3 class="section-subtitle">Managing Usage Expectations</h3>
+                            
+                            <div class="pricing-table">
+                                <div class="pricing-col">
+                                    <div class="pricing-header">Free Account</div>
+                                    <ul class="pricing-features">
+                                        <li><i class="fa-solid fa-check"></i> Latest standard models</li>
+                                        <li><i class="fa-solid fa-check"></i> Standard reasoning &amp; analysis</li>
+                                        <li><i class="fa-solid fa-triangle-exclamation"></i> Subject to daily message limits</li>
+                                        <li><i class="fa-solid fa-triangle-exclamation"></i> Shared standard server priority</li>
+                                    </ul>
+                                </div>
+                                <div class="pricing-col premium">
+                                    <div class="pricing-header">Pro Account</div>
+                                    <ul class="pricing-features">
+                                        <li><i class="fa-solid fa-circle-check"></i> 5x more usage allowance</li>
+                                        <li><i class="fa-solid fa-circle-check"></i> Priority access during peak hours</li>
+                                        <li><i class="fa-solid fa-circle-check"></i> Early access to experimental features</li>
+                                        <li><i class="fa-solid fa-circle-check"></i> Select advanced models</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slide-visual">
+                            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=80" alt="Server clusters" class="featured-img">
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SLIDE 6: MCP & CONNECTORS -->
+                <section class="slide" id="slide-5">
+                    <div class="slide-grid">
+                        <div class="slide-content-left">
+                            <span class="slide-number">06</span>
+                            <h2>Model Context Protocol</h2>
+                            <h3 class="section-subtitle">Claude Connectors</h3>
+                            
+                            <p class="slide-intro-text">
+                                Claude is no longer restricted to static knowledge. Thanks to the <strong>Model Context Protocol (MCP)</strong>—an open standard—Claude connects to external apps, local directories, databases, and APIs.
+                            </p>
+                            
+                            <div class="mcp-grid">
+                                <div class="mcp-card">
+                                    <div class="mcp-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+                                    <strong>Read &amp; Search</strong>
+                                    <span>Query documents, live directories, and databases directly.</span>
+                                </div>
+                                <div class="mcp-card">
+                                    <div class="mcp-icon"><i class="fa-solid fa-play"></i></div>
+                                    <strong>Action Control</strong>
+                                    <span>Execute API operations, commit code, and trigger workflows.</span>
+                                </div>
+                                <div class="mcp-card">
+                                    <div class="mcp-icon"><i class="fa-solid fa-clock-rotate-left"></i></div>
+                                    <strong>Real-Time Sync</strong>
+                                    <span>Fetch operational metrics and live server states in real time.</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slide-visual">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="Real time data visualizations" class="featured-img">
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SLIDE 7: SOFTWARE DEVELOPMENT -->
+                <section class="slide" id="slide-6">
+                    <div class="slide-grid">
+                        <div class="slide-content-left">
+                            <span class="slide-number">07</span>
+                            <h2>Software Development &amp; Coding</h2>
+                            <h3 class="section-subtitle">Autonomous Engineering Workflows</h3>
+                            
+                            <div class="workflow-split">
+                                <div class="workflow-box">
+                                    <h5><i class="fa-solid fa-terminal"></i> Capabilities</h5>
+                                    <ul>
+                                        <li><strong>Autonomous Coding:</strong> Fixes errors, writes complete features, and refactors stacks.</li>
+                                        <li><strong>Legacy Translation:</strong> Migrates older codebases (e.g. to ASP.NET Core) and creates comprehensive unit tests.</li>
+                                        <li><strong>Claude Tag:</strong> Integrates into Slack `@Claude` to monitor pipelines and alert devs.</li>
+                                    </ul>
+                                </div>
+                                <div class="workflow-box highlight">
+                                    <h5><i class="fa-solid fa-plug"></i> Connectors Used</h5>
+                                    <ul>
+                                        <li><strong>GitHub / GitLab:</strong> Resolves issues, generates commits, and edits pull requests directly.</li>
+                                        <li><strong>Terminal &amp; Desktop:</strong> Queries databases, runs localized compiler tests, and reads configurations.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slide-visual">
+                            <img src="https://images.unsplash.com/photo-1607799279861-4dd421887fb3?auto=format&fit=crop&w=800&q=80" alt="Code Terminal" class="featured-img">
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SLIDE 8: CREATIVE WORKFLOWS -->
+                <section class="slide" id="slide-7">
+                    <div class="slide-grid">
+                        <div class="slide-content-left">
+                            <span class="slide-number">08</span>
+                            <h2>Creative Production &amp; Design</h2>
+                            <h3 class="section-subtitle">Native Professional App Integrations</h3>
+                            
+                            <div class="creative-cards">
+                                <div class="creative-card">
+                                    <i class="fa-solid fa-cubes"></i>
+                                    <div>
+                                        <strong>Blender &amp; Fusion Connectors</strong>
+                                        <p>Communicates with Blender Python API to scripts custom 3D geometries, debug scenes, or install custom tools.</p>
+                                    </div>
+                                </div>
+                                <div class="creative-card">
+                                    <i class="fa-solid fa-palette"></i>
+                                    <div>
+                                        <strong>Canva &amp; Affinity Connectors</strong>
+                                        <p>Automates layer batch adjustments, renaming, and mass exporting via simple text directives.</p>
+                                    </div>
+                                </div>
+                                <div class="creative-card">
+                                    <i class="fa-solid fa-music"></i>
+                                    <div>
+                                        <strong>Ableton &amp; Splice Connectors</strong>
+                                        <p>Finds royalty-free audio samples and maps them straight to the tracks in Ableton's timeline.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slide-visual">
+                            <img src="https://images.unsplash.com/photo-1502462041640-b3d7e50d0662?auto=format&fit=crop&w=800&q=80" alt="Design workflow" class="featured-img">
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SLIDE 9: AUTOMATION & DATA ANALYSIS -->
+                <section class="slide" id="slide-8">
+                    <div class="slide-grid">
+                        <div class="slide-content-left">
+                            <span class="slide-number">09</span>
+                            <h2>Automation &amp; Advanced Analysis</h2>
+                            <h3 class="section-subtitle">Centralized Task Orchestration</h3>
+                            
+                            <div class="bullets-container">
+                                <div class="bullet-item">
+                                    <div class="bullet-bullet"><i class="fa-solid fa-network-wired"></i></div>
+                                    <div class="bullet-text">
+                                        <strong>Zapier / n8n / Make:</strong> Conversational control over thousands of web services (e.g. Gmail &rarr; HubSpot &rarr; Slack).
+                                    </div>
+                                </div>
+                                <div class="bullet-item">
+                                    <div class="bullet-bullet"><i class="fa-solid fa-database"></i></div>
+                                    <div class="bullet-text">
+                                        <strong>CData Connector:</strong> Universal SQL bridge querying 350+ data warehouses, SaaS portals, and database clusters.
+                                    </div>
+                                </div>
+                                <div class="bullet-item">
+                                    <div class="bullet-bullet"><i class="fa-solid fa-list-check"></i></div>
+                                    <div class="bullet-text">
+                                        <strong>Jira &amp; ServiceNow:</strong> Resolves incidents, updates Kanban tickets, and triggers IT service pathways.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slide-visual">
+                            <img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&q=80" alt="Automation process chart" class="featured-img">
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SLIDE 10: GOVERNANCE -->
+                <section class="slide" id="slide-9">
+                    <div class="slide-grid">
+                        <div class="slide-content-left">
+                            <span class="slide-number">10</span>
+                            <h2>How Connector Permissions Work</h2>
+                            <h3 class="section-subtitle">Enterprise-Grade Governance</h3>
+                            
+                            <div class="governance-grid">
+                                <div class="gov-step">
+                                    <div class="gov-num">1</div>
+                                    <h5>Credential Inheritance</h5>
+                                    <p>Claude strictly operates within your login credentials. It cannot view files or databases you lack permissions for.</p>
+                                </div>
+                                <div class="gov-step">
+                                    <div class="gov-num">2</div>
+                                    <h5>Action Restrictions</h5>
+                                    <p>IT admins config permissions by tiers: <strong>Always Allow</strong> (read-only), <strong>Needs Approval</strong> (write/delete/commit), or <strong>Blocked</strong>.</p>
+                                </div>
+                                <div class="gov-step">
+                                    <div class="gov-num">3</div>
+                                    <h5>Custom Integrations</h5>
+                                    <p>Developers bridge custom proprietary backends using custom remote MCP URLs and secure OAuth configurations.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slide-visual">
+                            <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80" alt="Cybersecurity lock representation" class="featured-img">
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SLIDE 11: LIMITATIONS & WORKAROUNDS -->
+                <section class="slide" id="slide-10">
+                    <div class="slide-grid">
+                        <div class="slide-content-left">
+                            <span class="slide-number">11</span>
+                            <h2>Ecosystem Limitations &amp; Workarounds</h2>
+                            <h3 class="section-subtitle">Navigating LLM Bottlenecks</h3>
+                            
+                            <div class="limitations-table">
+                                <div class="limit-row header">
+                                    <div>Limitation</div>
+                                    <div>The Workaround</div>
+                                </div>
+                                <div class="limit-row">
+                                    <div class="limit-name"><strong>Message Caps (Token limits)</strong></div>
+                                    <div>Keep prompts concise; start fresh chat threads to clear chat history context.</div>
+                                </div>
+                                <div class="limit-row">
+                                    <div class="limit-name"><strong>No Active Web Browsing</strong></div>
+                                    <div>Copy/paste documentation or news directly into the prompt for analysis.</div>
+                                </div>
+                                <div class="limit-row">
+                                    <div class="limit-name"><strong>Occasional Hallucinations</strong></div>
+                                    <div>Verify facts/code; instruct Claude: <em>"Say 'I don't know' if you lack sufficient data."</em></div>
+                                </div>
+                                <div class="limit-row">
+                                    <div class="limit-name"><strong>Sandbox File Constraints</strong></div>
+                                    <div>Copy-paste code or convert local databases to text-based CSV/Markdown format.</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slide-visual">
+                            <img src="https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?auto=format&fit=crop&w=800&q=80" alt="Limitations" class="featured-img">
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SLIDE 12: CONCLUSION & PRESENTER DETAILS -->
+                <section class="slide" id="slide-11">
+                    <div class="slide-grid conclusion-slide-layout">
+                        <div class="slide-content-left">
+                            <span class="badge success">CONCLUSION</span>
+                            <h2>Thank You!</h2>
+                            <p class="conclusion-desc">That wraps up our seminar on Claude and the Model Context Protocol. I hope you now understand how to leverage modern AI ecosystems for code, design, automation, and how to safely navigate their limitations.</p>
+                            
+                            <div class="presenter-socials">
+                                <h3>Presenter Details</h3>
+                                <div class="social-item">
+                                    <i class="fa-brands fa-instagram instagram-icon"></i>
+                                    <span>Instagram: <strong>@sanga._.bro</strong></span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="slide-visual conclusion-visuals">
+                            <div class="presenter-cards-container">
+                                <!-- Profile Card -->
+                                <div class="profile-card">
+                                    <div class="img-wrapper">
+                                        <img src="assets/profile.png" alt="SANGAMESWARAN Profile" onerror="this.src='https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=300&q=80';">
+                                    </div>
+                                    <h4>SANGAMESWARAN</h4>
+                                    <span>Seminar Speaker</span>
+                                </div>
+                                <!-- QR Card -->
+                                <div class="qr-card">
+                                    <div class="qr-wrapper">
+                                        <img src="assets/LinkedinQr.jpeg" alt="LinkedIn QR Code" onerror="this.src='https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://www.linkedin.com';">
+                                    </div>
+                                    <h4>LinkedIn</h4>
+                                    <span>Scan to Connect</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+
+            <!-- Slide Control Panel -->
+            <div class="controls-panel">
+                <button class="control-btn" id="prevBtn" title="Previous Slide (Left Arrow)">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <div class="slide-counter" id="slideCounter">1 / 12</div>
+                <button class="control-btn" id="nextBtn" title="Next Slide (Right Arrow/Space)">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+                <button class="control-btn fs-btn" id="fullscreenBtn" title="Toggle Fullscreen">
+                    <i class="fa-solid fa-expand"></i>
+                </button>
+            </div>
+        </main>
+    </div>
+
+    <!-- Script inclusion -->
+    <script src="script.js"></script>
+</body>
+</html>
