@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const appContainer = document.querySelector('.app-container');
     const sidebar = document.getElementById('sidebar');
     const sidebarToggleBtn = document.getElementById('sidebarToggleBtn');
+    const slidesContainer = document.getElementById('slidesContainer');
 
     let currentSlide = 0;
     const totalSlides = slides.length;
@@ -67,6 +68,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Sync browser URL hash without scrolling the browser window
         history.replaceState(null, null, `#slide-${currentSlide}`);
+
+        // Reset scroll position to top on mobile and desktop
+        window.scrollTo({ top: 0, behavior: 'instant' });
+        if (slidesContainer) {
+            slidesContainer.scrollTop = 0;
+        }
     }
 
     function navigateNext() {
@@ -151,32 +158,32 @@ document.addEventListener('DOMContentLoaded', () => {
     
     const swipeThreshold = 50; // Minimum swipe distance in px
 
-    const slidesContainer = document.getElementById('slidesContainer');
+    if (slidesContainer) {
+        slidesContainer.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+            touchStartY = e.changedTouches[0].screenY;
+        }, { passive: true });
 
-    slidesContainer.addEventListener('touchstart', (e) => {
-        touchStartX = e.changedTouches[0].screenX;
-        touchStartY = e.changedTouches[0].screenY;
-    }, { passive: true });
+        slidesContainer.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            touchEndY = e.changedTouches[0].screenY;
+            handleSwipeGesture();
+        }, { passive: true });
 
-    slidesContainer.addEventListener('touchend', (e) => {
-        touchEndX = e.changedTouches[0].screenX;
-        touchEndY = e.changedTouches[0].screenY;
-        handleSwipeGesture();
-    }, { passive: true });
+        function handleSwipeGesture() {
+            const deltaX = touchEndX - touchStartX;
+            const deltaY = touchEndY - touchStartY;
 
-    function handleSwipeGesture() {
-        const deltaX = touchEndX - touchStartX;
-        const deltaY = touchEndY - touchStartY;
-
-        // Check if horizontal swipe was larger than vertical swipe
-        if (Math.abs(deltaX) > Math.abs(deltaY)) {
-            if (Math.abs(deltaX) > swipeThreshold) {
-                if (deltaX < 0) {
-                    // Swiped left -> Next Slide
-                    navigateNext();
-                } else {
-                    // Swiped right -> Previous Slide
-                    navigatePrev();
+            // Check if horizontal swipe was larger than vertical swipe
+            if (Math.abs(deltaX) > Math.abs(deltaY)) {
+                if (Math.abs(deltaX) > swipeThreshold) {
+                    if (deltaX < 0) {
+                        // Swiped left -> Next Slide
+                        navigateNext();
+                    } else {
+                        // Swiped right -> Previous Slide
+                        navigatePrev();
+                    }
                 }
             }
         }
